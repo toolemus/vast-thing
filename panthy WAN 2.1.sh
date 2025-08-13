@@ -23,6 +23,7 @@ NODES=(
     "https://github.com/kijai/ComfyUI-KJNodes"
     "https://github.com/Fannovel16/ComfyUI-Frame-Interpolation"
     "https://github.com/yolain/ComfyUI-Easy-Use"
+    "https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite"
 )
 
 WORKFLOWS=(
@@ -243,3 +244,4 @@ if [[ ! -f /.noprovisioning ]]; then
     provisioning_start
 
 fi
+
