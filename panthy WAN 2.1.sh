@@ -54,7 +54,7 @@ LORA_MODELS=(
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/furry_nsfw_1.1_e22.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/360-orbit.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan-ultimatedeepthroat-V2-224epo-k3nk.safetensors"
-    "https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/Wan21_T2V_14B_lightx2v_cfg_step_distill_lora_rank32.safetensors"
+    "https://huggingface.co/lightx2v/Wan2.1-I2V-14B-480P-StepDistill-CfgDistill-Lightx2v/resolve/main/loras/Wan21_I2V_14B_lightx2v_cfg_step_distill_lora_rank64.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/jfj-deepthroat-v1.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/doggyPOV_v1_1.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan-i2v-480p-anal-squirting-e56.safetensors"
@@ -244,4 +244,5 @@ if [[ ! -f /.noprovisioning ]]; then
     provisioning_start
 
 fi
+
 
