@@ -69,6 +69,7 @@ LORA_MODELS=(
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan2.1-i2v-480p-flaccid-v1.0.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/c0wg1rl_WAN-i2v-720p-50.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/SU_Twrk_EP55.safetensors"
+    "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/masturbation_cumshot_v1.1_e310.safetensors"
 )
 
 VAE_MODELS=(
@@ -246,6 +247,7 @@ if [[ ! -f /.noprovisioning ]]; then
     provisioning_start
 
 fi
+
 
 
 
