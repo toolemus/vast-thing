@@ -23,6 +23,20 @@ NODES=(
     "https://github.com/kijai/ComfyUI-KJNodes"
     "https://github.com/Fannovel16/ComfyUI-Frame-Interpolation"
     "https://github.com/yolain/ComfyUI-Easy-Use"
+    "https://github.com/rgthree/rgthree-comfy"
+    "https://github.com/yolain/ComfyUI-Easy-Use"
+    "https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite"
+    "https://github.com/chrisgoringe/cg-use-everywhere"
+    "https://github.com/VAST-AI-Research/ComfyUI-Tripo"
+    "https://github.com/Smirnov75/ComfyUI-mxToolkit"
+    "https://github.com/jamesWalker55/comfyui-various"
+    "https://github.com/orssorbit/ComfyUI-wanBlockswap"
+    "https://github.com/aria1th/ComfyUI-LogicUtils"
+    "https://github.com/chibiace/ComfyUI-Chibi-Nodes"
+    "https://github.com/alt-key-project/comfyui-dream-video-batches"
+    "https://github.com/stduhpf/ComfyUI-WanMoeKSampler"
+    "https://github.com/plugcrypt/CRT-Nodes"
+    "https://github.com/ShmuelRonen/ComfyUI-WanVideoKsampler"
 )
 
 WORKFLOWS=(
@@ -37,13 +51,15 @@ CHECKPOINT_MODELS=(
 DIFFUSION_MODELS=(
     "https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/diffusion_models/wan2.2_i2v_high_noise_14B_fp8_scaled.safetensors"
     "https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/diffusion_models/wan2.2_i2v_low_noise_14B_fp8_scaled.safetensors"
+    "https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/diffusion_models/wan2.2_t2v_high_noise_14B_fp8_scaled.safetensors"
+    "https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/diffusion_models/wan2.2_t2v_low_noise_14B_fp8_scaled.safetensors"
 )
 
 CLIP_MODELS=(
 )
 
 TEXT_ENCODERS=(
-    "https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors"
+    "https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/text_encoders/umt5_xxl_fp16.safetensors"
 )
 
 LORA_MODELS=(
@@ -51,7 +67,7 @@ LORA_MODELS=(
 )
 
 VAE_MODELS=(
-    "https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/vae/wan2.2_vae.safetensors"
+    "https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/vae/wan_2.1_vae.safetensors"
 )
 
 ESRGAN_MODELS=(
@@ -225,3 +241,4 @@ if [[ ! -f /.noprovisioning ]]; then
     provisioning_start
 
 fi
+
