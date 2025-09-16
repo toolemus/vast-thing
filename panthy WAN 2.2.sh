@@ -64,6 +64,7 @@ TEXT_ENCODERS=(
 
 LORA_MODELS=(
     "https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/Lightx2v/lightx2v_I2V_14B_480p_cfg_step_distill_rank128_bf16.safetensors"
+    "https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/Lightx2v/lightx2v_T2V_14B_cfg_step_distill_v2_lora_rank128_bf16.safetensors"
 )
 
 VAE_MODELS=(
@@ -241,4 +242,5 @@ if [[ ! -f /.noprovisioning ]]; then
     provisioning_start
 
 fi
+
 
