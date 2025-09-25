@@ -24,6 +24,12 @@ NODES=(
     "https://github.com/Fannovel16/ComfyUI-Frame-Interpolation"
     "https://github.com/yolain/ComfyUI-Easy-Use"
     "https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite"
+    "https://github.com/rgthree/rgthree-comfy"
+    "https://github.com/chrisgoringe/cg-use-everywhere"
+    "https://github.com/Smirnov75/ComfyUI-mxToolkit"
+    "https://github.com/jamesWalker55/comfyui-various"
+    "https://github.com/Flow-two/ComfyUI-WanStartEndFramesNative"
+    "https://github.com/pythongosssss/ComfyUI-Custom-Scripts"  
 )
 
 WORKFLOWS=(
@@ -45,6 +51,7 @@ CLIP_MODELS=(
 
 TEXT_ENCODERS=(
     "https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/umt5-xxl-enc-fp8_e4m3fn.safetensors"
+    "https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors"
 )
 
 LORA_MODELS=(
@@ -53,23 +60,24 @@ LORA_MODELS=(
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan-nsfw-e14-fixed.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/furry_nsfw_1.1_e22.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/360-orbit.safetensors"
-    "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan-ultimatedeepthroat-V2-224epo-k3nk.safetensors"
     "https://huggingface.co/lightx2v/Wan2.1-I2V-14B-480P-StepDistill-CfgDistill-Lightx2v/resolve/main/loras/Wan21_I2V_14B_lightx2v_cfg_step_distill_lora_rank64.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/jfj-deepthroat-v1.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/doggyPOV_v1_1.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan-i2v-480p-anal-squirting-e56.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/Anime%20CumShot-Emotion.safetensors"
-    "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan_cumshot_i2v.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan-thiccum-v3.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan-jelly-hips-i2v-16epo-k3nk.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan-t2v-anal-reverse-cowgirl-e54.safetensors"
-    "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/analMissionary_1.1_i2v_e100.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/AssClappingTwerk.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/erect_penis_epoch_80.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan2.1-i2v-480p-flaccid-v1.0.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/c0wg1rl_WAN-i2v-720p-50.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/SU_Twrk_EP55.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/masturbation_cumshot_v1.1_e310.safetensors"
+    "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/ass_spread_i2v_480p_v02.safetensors"
+    "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/genitals_helper_v1.0_e219.safetensors"
+    "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/ass_spread_i2v_480p_v02.safetensors"
+    "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/facesit_i2v_480p_v2.safetensors"
 )
 
 VAE_MODELS=(
@@ -247,6 +255,7 @@ if [[ ! -f /.noprovisioning ]]; then
     provisioning_start
 
 fi
+
 
 
 
