@@ -76,6 +76,8 @@ LORA_MODELS=(
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/maleejac_000004625_low_noise.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/reverse_suspended_congress_I2V_high.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/reverse_suspended_congress_I2V_low.safetensors"
+    "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/23High%20noise-Cumshot%20Aesthetics.safetensors"
+    "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/56Low%20noise-Cumshot%20Aesthetics.safetensors"
 )
 
 VAE_MODELS=(
@@ -253,6 +255,7 @@ if [[ ! -f /.noprovisioning ]]; then
     provisioning_start
 
 fi
+
 
 
 
