@@ -69,9 +69,13 @@ LORA_MODELS=(
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/NSFW-22-H-e8.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/NSFW-22-L-e8.safetensors"
     "https://huggingface.co/ostris/wan22_i2v_14b_orbit_shot_lora/resolve/main/wan22_14b_i2v_orbit_high_noise.safetensors"
-    "https://huggingface.co/ostris/wan22_i2v_14b_orbit_shot_lora/resolve/main/wan22_14b_i2v_orbit_high_noise.safetensors"
+    "https://huggingface.co/ostris/wan22_i2v_14b_orbit_shot_lora/resolve/main/wan22_14b_i2v_orbit_low_noise.safetensors"
     "https://huggingface.co/lightx2v/Wan2.2-Lightning/resolve/main/Wan2.2-T2V-A14B-4steps-lora-rank64-Seko-V1.1/high_noise_model.safetensors"
     "https://huggingface.co/lightx2v/Wan2.2-Lightning/resolve/main/Wan2.2-T2V-A14B-4steps-lora-rank64-Seko-V1.1/low_noise_model.safetensors"
+    "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/maleejac_000004625_high_noise.safetensors"
+    "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/maleejac_000004625_low_noise.safetensors"
+    "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/reverse_suspended_congress_I2V_high.safetensors"
+    "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/reverse_suspended_congress_I2V_low.safetensors"
 )
 
 VAE_MODELS=(
@@ -249,6 +253,7 @@ if [[ ! -f /.noprovisioning ]]; then
     provisioning_start
 
 fi
+
 
 
 
