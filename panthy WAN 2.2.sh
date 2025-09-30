@@ -37,6 +37,7 @@ NODES=(
     "https://github.com/stduhpf/ComfyUI-WanMoeKSampler"
     "https://github.com/plugcrypt/CRT-Nodes"
     "https://github.com/ShmuelRonen/ComfyUI-WanVideoKsampler"
+    "https://github.com/willmiao/ComfyUI-Lora-Manager"
 )
 
 WORKFLOWS=(
@@ -58,6 +59,7 @@ CLIP_MODELS=(
 
 TEXT_ENCODERS=(
     "https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/text_encoders/umt5_xxl_fp16.safetensors"
+    "https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors"
 )
 
 LORA_MODELS=(
@@ -257,6 +259,7 @@ if [[ ! -f /.noprovisioning ]]; then
     provisioning_start
 
 fi
+
 
 
 
