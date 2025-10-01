@@ -31,6 +31,7 @@ NODES=(
     "https://github.com/Flow-two/ComfyUI-WanStartEndFramesNative"
     "https://github.com/pythongosssss/ComfyUI-Custom-Scripts"  
     "https://github.com/pollockjj/ComfyUI-MultiGPU"
+    "https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite"
 )
 
 WORKFLOWS=(
@@ -256,6 +257,7 @@ if [[ ! -f /.noprovisioning ]]; then
     provisioning_start
 
 fi
+
 
 
 
