@@ -38,6 +38,7 @@ NODES=(
     "https://github.com/plugcrypt/CRT-Nodes"
     "https://github.com/ShmuelRonen/ComfyUI-WanVideoKsampler"
     "https://github.com/willmiao/ComfyUI-Lora-Manager"
+    "https://github.com/MoonGoblinDev/Civicomfy"
 )
 
 WORKFLOWS=(
@@ -269,6 +270,7 @@ if [[ ! -f /.noprovisioning ]]; then
     provisioning_start
 
 fi
+
 
 
 
