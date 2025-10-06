@@ -32,6 +32,7 @@ NODES=(
     "https://github.com/pythongosssss/ComfyUI-Custom-Scripts"  
     "https://github.com/pollockjj/ComfyUI-MultiGPU"
     "https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite"
+    "https://github.com/MoonGoblinDev/Civicomfy"
 )
 
 WORKFLOWS=(
@@ -257,6 +258,7 @@ if [[ ! -f /.noprovisioning ]]; then
     provisioning_start
 
 fi
+
 
 
 
