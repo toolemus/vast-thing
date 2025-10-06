@@ -87,7 +87,10 @@ LORA_MODELS=(
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/ass_ripple_LOW_V01.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/SeductiveTurnsLow-000048.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/SeductiveTurnsHigh-000048.safetensors"
-    
+    "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan%202.2/wan2.2-i2v-high-oral-insertion-v1.0.safetensors"
+    "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan%202.2/wan2.2-i2v-high-pov-insertion-v1.0.safetensors"
+    "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan%202.2/wan2.2-i2v-low-pov-insertion-v1.0.safetensors"
+    "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan%202.2/wan2.2-i2v-low-oral-insertion-v1.0.safetensors"
 )
 
 VAE_MODELS=(
@@ -266,6 +269,7 @@ if [[ ! -f /.noprovisioning ]]; then
     provisioning_start
 
 fi
+
 
 
 
