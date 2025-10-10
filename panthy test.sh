@@ -11,7 +11,7 @@ APT_PACKAGES=(
 )
 
 PIP_PACKAGES=(
-    #"package-1"
+    "sageattention-2.2.0-cp312-cp312-linux_x86_64.whl"
     #"package-2"
 )
 
@@ -22,7 +22,6 @@ NODES=(
     "https://github.com/crystian/comfyui-crystools"
     "https://github.com/kijai/ComfyUI-KJNodes"
     "https://github.com/Fannovel16/ComfyUI-Frame-Interpolation"
-    "https://github.com/yolain/ComfyUI-Easy-Use"
 )
 
 WORKFLOWS=(
@@ -35,18 +34,22 @@ CHECKPOINT_MODELS=(
 )
 
 DIFFUSION_MODELS=(
+   
 )
 
 CLIP_MODELS=(
 )
 
-UNET_MODELS=(
+TEXT_ENCODERS=(
+
 )
 
 LORA_MODELS=(
+
 )
 
 VAE_MODELS=(
+
 )
 
 ESRGAN_MODELS=(
@@ -76,22 +79,22 @@ function provisioning_start() {
         "${COMFYUI_DIR}/models/diffusion_models" \
         "${DIFFUSION_MODELS[@]}"
     provisioning_get_files \
-        "${COMFYUI_DIR}/models/unet" \
-        "${UNET_MODELS[@]}"
+        "${COMFYUI_DIR}/models/text_encoders" \
+        "${TEXT_ENCODERS[@]}"
     provisioning_get_files \
-        "${COMFYUI_DIR}/models/lora" \
+        "${COMFYUI_DIR}/models/loras" \
         "${LORA_MODELS[@]}"
     provisioning_get_files \
         "${COMFYUI_DIR}/models/controlnet" \
         "${CONTROLNET_MODELS[@]}"
     provisioning_get_files \
-        "${COMFYUI_DIR}/models/clip" \
+        "${COMFYUI_DIR}/models/clip_vision" \
         "${CLIP_MODELS[@]}"
     provisioning_get_files \
         "${COMFYUI_DIR}/models/vae" \
         "${VAE_MODELS[@]}"
     provisioning_get_files \
-        "${COMFYUI_DIR}/models/esrgan" \
+        "${COMFYUI_DIR}/models/upscale_models" \
         "${ESRGAN_MODELS[@]}"
     provisioning_print_end
 }
@@ -104,13 +107,14 @@ function provisioning_get_apt_packages() {
 
 function provisioning_get_pip_packages() {
     if [[ -n $PIP_PACKAGES ]]; then
+            wget --content-disposition -P /workspace "https://huggingface.co/Kijai/PrecompiledWheels/resolve/main/sageattention-2.2.0-cp312-cp312-linux_x86_64.whl"
             pip install --no-cache-dir ${PIP_PACKAGES[@]}
     fi
 }
 
 # We must be at release tag v0.3.49 or greater for fp8 support
 provisioning_update_comfyui() {
-    required_tag="v0.3.49"
+    required_tag="v0.3.60"
     cd ${COMFYUI_DIR}
     git fetch --all --tags
     current_commit=$(git rev-parse HEAD)
@@ -217,4 +221,9 @@ function provisioning_download() {
 # Allow user to disable provisioning if they started with a script they didn't want
 if [[ ! -f /.noprovisioning ]]; then
     provisioning_start
+
 fi
+
+
+
+
