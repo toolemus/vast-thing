@@ -66,7 +66,6 @@ TEXT_ENCODERS=(
 )
 
 LORA_MODELS=(
-    "https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/Lightx2v/lightx2v_I2V_14B_480p_cfg_step_distill_rank128_bf16.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/DR34ML4Y_I2V_14B_HIGH.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/DR34ML4Y_I2V_14B_LOW.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/shake-000008.safetensors"
@@ -94,6 +93,8 @@ LORA_MODELS=(
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan%202.2/wan2.2-i2v-high-pov-insertion-v1.0.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan%202.2/wan2.2-i2v-low-pov-insertion-v1.0.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan%202.2/wan2.2-i2v-low-oral-insertion-v1.0.safetensors"
+    "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/Furry_Enhancer_Wan22_V3_High_Noise_I2V.safetensors"
+    "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/Furry_Enhancer_Wan22_V3_Low_Noise_I2V.safetensors"
 )
 
 VAE_MODELS=(
@@ -273,6 +274,7 @@ if [[ ! -f /.noprovisioning ]]; then
     provisioning_start
 
 fi
+
 
 
 
