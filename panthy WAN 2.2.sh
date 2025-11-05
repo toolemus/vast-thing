@@ -68,25 +68,20 @@ TEXT_ENCODERS=(
 LORA_MODELS=(
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/DR34ML4Y_I2V_14B_HIGH.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/DR34ML4Y_I2V_14B_LOW.safetensors"
-    "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/shake-000008.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/furry_nsfw_1.1_e22.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/NSFW-22-H-e8.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/NSFW-22-L-e8.safetensors"
     "https://huggingface.co/ostris/wan22_i2v_14b_orbit_shot_lora/resolve/main/wan22_14b_i2v_orbit_high_noise.safetensors"
     "https://huggingface.co/ostris/wan22_i2v_14b_orbit_shot_lora/resolve/main/wan22_14b_i2v_orbit_low_noise.safetensors"
-    "https://huggingface.co/lightx2v/Wan2.2-Lightning/resolve/main/Wan2.2-I2V-A14B-4steps-lora-rank64-Seko-V1/high_noise_model.safetensors?download=true"
-    "https://huggingface.co/lightx2v/Wan2.2-Lightning/resolve/main/Wan2.2-I2V-A14B-4steps-lora-rank64-Seko-V1/low_noise_model.safetensors?download=true"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/maleejac_000004625_high_noise.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/maleejac_000004625_low_noise.safetensors"
-    "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/23High%20noise-Cumshot%20Aesthetics.safetensors"
-    "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/56Low%20noise-Cumshot%20Aesthetics.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan-jelly-hips-i2v-16epo-k3nk.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan-i2v-480p-anal-squirting-e56.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan-thiccum-v3.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/slop_twerk_HighNoise_merged3_7_v2.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/slop_twerk_LowNoise_merged3_7_v2.safetensors"
-    "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/ass_ripple_HIGH_V01.safetensors"
-    "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/ass_ripple_LOW_V01.safetensors"
+    "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan%202.2/SmoothXXXAnimation_High.safetensors"
+    "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan%202.2/SmoothXXXAnimation_Low.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/SeductiveTurnsLow-000048.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/SeductiveTurnsHigh-000048.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan%202.2/wan2.2-i2v-high-oral-insertion-v1.0.safetensors"
@@ -274,6 +269,7 @@ if [[ ! -f /.noprovisioning ]]; then
     provisioning_start
 
 fi
+
 
 
 
