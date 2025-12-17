@@ -75,8 +75,6 @@ LORA_MODELS=(
     "https://huggingface.co/ostris/wan22_i2v_14b_orbit_shot_lora/resolve/main/wan22_14b_i2v_orbit_low_noise.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/maleejac_000004625_high_noise.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/maleejac_000004625_low_noise.safetensors"
-    "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan-jelly-hips-i2v-16epo-k3nk.safetensors"
-    "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan-i2v-480p-anal-squirting-e56.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan-thiccum-v3.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/slop_twerk_HighNoise_merged3_7_v2.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/slop_twerk_LowNoise_merged3_7_v2.safetensors"
@@ -92,8 +90,6 @@ LORA_MODELS=(
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/Furry_Enhancer_Wan22_V3_Low_Noise_I2V.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan%202.2/TRANSCOWGIRLHIGH.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan%202.2/TRANSCOWGIRLLOW.safetensors"
-    "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan%202.2/shemale%20doggy%20from%20behind_high_noise.safetensors"
-    "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan%202.2/shemale%20doggy%20from%20behind_low_noise.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan%202.2/wan22.r3v3rs3_c0wg1rl-14b-High-i2v_e70.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan%202.2/wan22.r3v3rs3_c0wg1rl-14b-Low-i2v_e70.safetensors"
     "https://huggingface.co/lightx2v/Wan2.2-Distill-Loras/resolve/main/wan2.2_i2v_A14b_low_noise_lora_rank64_lightx2v_4step_1022.safetensors"
@@ -106,6 +102,10 @@ LORA_MODELS=(
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan%202.2/i2v-anus-squirt_low_noise.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan%202.2/WAN2.2AssholeHIGHI2Ve68.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan%202.2/WAN2.2AssholeLOWI2Ve41.safetensors"
+    "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan%202.2/wan22_i2v_hip_shake_high_v2.safetensors"
+    "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan%202.2/wan22_i2v_hip_shake_low_v2.safetensors"
+    "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan%202.2/I2V-WAN2.2-POVFaceSitting-2.0-HighNoise_-000032.safetensors"
+    "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan%202.2/I2V-WAN2.2-POVFaceSitting-2.0-LowNoise_-000020.safetensors"
 )
 
 VAE_MODELS=(
@@ -285,6 +285,7 @@ if [[ ! -f /.noprovisioning ]]; then
     provisioning_start
 
 fi
+
 
 
 
