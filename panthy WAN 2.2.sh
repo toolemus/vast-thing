@@ -104,8 +104,8 @@ LORA_MODELS=(
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan%202.2/x-ray_i2v_low.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan%202.2/i2v-anus-squirt_high_noise.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan%202.2/i2v-anus-squirt_low_noise.safetensors"
-    "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan%202.2/WAN2.2%20-%20Asshole%20-%20HIGH%20-%20I2V%20-%20e68.safetensors"
-    "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan%202.2/WAN2.2%20-%20Asshole%20-%20LOW%20-%20I2V%20-%20e41.safetensors"
+    "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan%202.2/WAN2.2AssholeHIGHI2Ve68.safetensors"
+    "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan%202.2/WAN2.2AssholeLOWI2Ve41.safetensors"
 )
 
 VAE_MODELS=(
@@ -285,6 +285,7 @@ if [[ ! -f /.noprovisioning ]]; then
     provisioning_start
 
 fi
+
 
 
 
