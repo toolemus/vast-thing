@@ -92,8 +92,6 @@ LORA_MODELS=(
     "https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/LoRAs/Wan22_Lightx2v/Wan_2_2_I2V_A14B_HIGH_lightx2v_4step_lora_v1030_rank_64_bf16.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan%202.2/WAN22_HighNoise_TransTwerk.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan%202.2/WAN22_LowNoise_TransTwerk.safetensors"
-    "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan%202.2/x-ray_i2v_high.safetensors"
-    "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan%202.2/x-ray_i2v_low.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan%202.2/i2v-anus-squirt_high_noise.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan%202.2/i2v-anus-squirt_low_noise.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan%202.2/WAN2.2AssholeHIGHI2Ve68.safetensors"
@@ -104,8 +102,8 @@ LORA_MODELS=(
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan%202.2/I2V-WAN2.2-POVFaceSitting-2.0-LowNoise_-000020.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan%202.2/wan2.2_i2v_high_ulitmate_pussy_asshole.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan%202.2/wan2.2_i2v_low_ulitmate_pussy_asshole.safetensors"
-    "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan%202.2/I2V-WAN2.2-EdibleAnus-HighNoise-1.1_-000050.safetensors"
-    "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan%202.2/I2V-WAN2.2-EdibleAnus-LowNoise-1.1_-000060.safetensors"
+    "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan%202.2/DR34ML4Y_I2V_14B_HIGH_V2.safetensors"
+    "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan%202.2/DR34ML4Y_I2V_14B_LOW_V2.safetensors"
 )
 
 VAE_MODELS=(
@@ -285,6 +283,7 @@ if [[ ! -f /.noprovisioning ]]; then
     provisioning_start
 
 fi
+
 
 
 
