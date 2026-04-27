@@ -108,6 +108,8 @@ LORA_MODELS=(
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan%202.2/wan22-jellyhips-i2v-23epoc-low-k3nk.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan%202.2/TWERKI2VHIGH.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan%202.2/TWERKI2VLOW.safetensors"
+    "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan%202.2/plug_pull_hn_2250.safetensors"
+    "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan%202.2/plug_pull_ln_5000.safetensors"
 )
 
 VAE_MODELS=(
