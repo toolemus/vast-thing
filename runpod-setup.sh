@@ -1,80 +1,110 @@
 #!/bin/bash
 
-BASE_DIR="/workspace/runpod-slim/ComfyUI"
+COMFYUI_DIR="/workspace/runpod-slim/ComfyUI"
 
-declare -A NODES
-NODES=["https://github.com/cubiq/ComfyUI_essentials"]="custom_nodes"
-NODES=["https://github.com/kijai/ComfyUI-WanVideoWrapper"]="custom_nodes"
+NODES=(
+    "https://github.com/kijai/ComfyUI-WanVideoWrapper"
+    "https://github.com/crystian/comfyui-crystools"
+)
 
-declare -A MODELS
-MODELS=["https://huggingface.co/ai-forever/Real-ESRGAN/resolve/main/RealESRGAN_x2.pth"]="diffusion_models"
-MODELS=["https://huggingface.co/ai-forever/Real-ESRGAN/resolve/main/RealESRGAN_x2.pth"]="text_encoders"
-MODELS=["https://huggingface.co/ai-forever/Real-ESRGAN/resolve/main/RealESRGAN_x2.pth"]="loras"
-MODELS=["https://huggingface.co/ai-forever/Real-ESRGAN/resolve/main/RealESRGAN_x2.pth"]="upscale_models"
-MODELS=["https://huggingface.co/ai-forever/Real-ESRGAN/resolve/main/RealESRGAN_x2.pth"]="vae"
+DIFFUSION_MODELS=(
+    "https://huggingface.co/ai-forever/Real-ESRGAN/resolve/main/RealESRGAN_x2.pth"
+)
 
-echo "============================================="
-echo "Processing Custom Nodes..."
-echo "============================================="
+TEXT_ENCODERS=(
+    "https://huggingface.co/ai-forever/Real-ESRGAN/resolve/main/RealESRGAN_x2.pth"
+)
 
-for repo in "${!NODES[@]}"; do
-    sub_dir="${NODES[$repo]}"
-    target_path="$BASE_DIR/$sub_dir"
-    
-    mkdir -p "$target_path"
-    cd "$target_path" || exit
-    
-    folder_name=$(basename "$repo" .git)
-    
-    # Check if node already exists
-    if [ -d "$folder_name" ]; then
-        echo "⚠️  [NODES] $folder_name already exists. Skipping download."
-        cd "$folder_name" || exit
-    else
-        # 🟢 PRINTING CURRENT NODE DOWNLOAD
-        echo "📥 [NODES] Downloading node: $folder_name ($repo)..."
-        if git clone "$repo"; then
-            cd "$folder_name" || exit
+LORA_MODELS=(
+    "https://huggingface.co/ai-forever/Real-ESRGAN/resolve/main/RealESRGAN_x2.pth"
+)
+
+VAE_MODELS=(
+    "https://huggingface.co/ai-forever/Real-ESRGAN/resolve/main/RealESRGAN_x2.pth"
+)
+
+ESRGAN_MODELS=(
+    "https://huggingface.co/ai-forever/Real-ESRGAN/resolve/main/RealESRGAN_x2.pth"
+)
+
+
+function provisioning_start() {
+    provisioning_print_header
+    provisioning_get_nodes
+    provisioning_get_pip_packages
+    provisioning_get_files \
+        "${COMFYUI_DIR}/models/diffusion_models" \
+        "${DIFFUSION_MODELS[@]}"
+    provisioning_get_files \
+        "${COMFYUI_DIR}/models/text_encoders" \
+        "${TEXT_ENCODERS[@]}"
+    provisioning_get_files \
+        "${COMFYUI_DIR}/models/loras" \
+        "${LORA_MODELS[@]}"
+    provisioning_get_files \
+        "${COMFYUI_DIR}/models/vae" \
+        "${VAE_MODELS[@]}"
+    provisioning_get_files \
+        "${COMFYUI_DIR}/models/upscale_models" \
+        "${ESRGAN_MODELS[@]}"
+    provisioning_print_end
+}
+
+function provisioning_print_header() {
+    echo "============================================="
+    echo "PHASE 1: Processing Custom Nodes..."
+    echo "============================================="
+}
+
+function provisioning_get_nodes() {
+    for repo in "${NODES[@]}"; do
+        dir="${repo##*/}"
+        path="${COMFYUI_DIR}/custom_nodes/${dir}"
+        requirements="${path}/requirements.txt"
+        if [[ -d $path ]]; then
+            if [[ ${AUTO_UPDATE,,} != "false" ]]; then
+                printf "Updating node: %s...\n" "${repo}"
+                ( cd "$path" && git pull )
+                if [[ -e $requirements ]]; then
+                   pip install --no-cache-dir -r "$requirements"
+                fi
+            fi
         else
-            echo "❌ [NODES] Failed to download node: $folder_name"
-            continue
+            printf "Downloading node: %s...\n" "${repo}"
+            git clone "${repo}" "${path}" --recursive
+            if [[ -e $requirements ]]; then
+                pip install --no-cache-dir -r "${requirements}"
+            fi
         fi
-    fi
+    done
+}
 
-    # Execute dependencies
-    if [ -f "requirements.txt" ]; then
-        echo "📦 [NODES] Running pip install for $folder_name..."
-        python3 -m pip install --no-cache-dir -r requirements.txt
-    fi
-    echo "----------------------------------------"
-done
 
-echo "============================================="
-echo "PHASE 2: Downloading Model Files..."
-echo "============================================="
-
-for url in "${!MODELS[@]}"; do
-    model_folder="${MODELS[$url]}"
-    target_path="$BASE_DIR/models/$model_folder"
+function provisioning_get_files() {
+    if [[ -z $2 ]]; then return 1; fi
     
-    mkdir -p "$target_path"
-    cd "$target_path" || exit
-    
-    # Extract file name from the URL
-    file_name=$(basename "$url" | cut -d? -f1)
-    
-    if [ -f "$file_name" ]; then
-        echo "⚠️  [MODELS] Model '$file_name' already exists. Skipping download."
-    else
-        # 🟢 PRINTING CURRENT MODEL DOWNLOAD
-        echo "📥 [MODELS] Downloading model: $file_name into models/$model_folder..."
-        # wget outputs its own real-time progress bar right underneath this print statement
-        wget -c --show-progress "$url" -O "$file_name"
-    fi
-    echo "----------------------------------------"
-done
+    dir="$1"
+    mkdir -p "$dir"
+    shift
+    arr=("$@")
+    printf "Downloading %s model(s) to %s...\n" "${#arr[@]}" "$dir"
+    for url in "${arr[@]}"; do
+        printf "Downloading: %s\n" "${url}"
+        provisioning_download "${url}" "${dir}"
+        printf "\n"
+    done
+}
 
-echo "============================================="
-echo "Setup complete! All nodes and models processed."
-echo "============================================="
+function provisioning_download() {
+        wget -qnc --content-disposition --show-progress -e dotbytes="${3:-4M}" -P "$2" "$1"
+}
+
+function provisioning_print_end() {
+    echo "Setup complete! All items successfully processed."
+}
+
+
+
+
+
 
