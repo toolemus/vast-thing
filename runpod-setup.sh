@@ -31,7 +31,6 @@ ESRGAN_MODELS=(
 function provisioning_start() {
     provisioning_print_header
     provisioning_get_nodes
-    provisioning_get_pip_packages
     provisioning_get_files \
         "${COMFYUI_DIR}/models/diffusion_models" \
         "${DIFFUSION_MODELS[@]}"
@@ -61,19 +60,20 @@ function provisioning_get_nodes() {
         dir="${repo##*/}"
         path="${COMFYUI_DIR}/custom_nodes/${dir}"
         requirements="${path}/requirements.txt"
+        
         if [[ -d $path ]]; then
             if [[ ${AUTO_UPDATE,,} != "false" ]]; then
                 printf "Updating node: %s...\n" "${repo}"
                 ( cd "$path" && git pull )
                 if [[ -e $requirements ]]; then
-                   pip install --no-cache-dir -r "$requirements"
+                   python3 -m pip install --no-cache-dir -r "$requirements"
                 fi
             fi
         else
             printf "Downloading node: %s...\n" "${repo}"
             git clone "${repo}" "${path}" --recursive
             if [[ -e $requirements ]]; then
-                pip install --no-cache-dir -r "${requirements}"
+                python3 -m pip install --no-cache-dir -r "${requirements}"
             fi
         fi
     done
@@ -87,7 +87,11 @@ function provisioning_get_files() {
     mkdir -p "$dir"
     shift
     arr=("$@")
+    
+    printf "\n=============================================\n"
     printf "Downloading %s model(s) to %s...\n" "${#arr[@]}" "$dir"
+    printf "=============================================\n"
+    
     for url in "${arr[@]}"; do
         printf "Downloading: %s\n" "${url}"
         provisioning_download "${url}" "${dir}"
@@ -100,8 +104,12 @@ function provisioning_download() {
 }
 
 function provisioning_print_end() {
-    echo "Setup complete! All items successfully processed."
+    echo "============================================="
+    echo "🎉 Setup complete! All items successfully processed."
+    echo "============================================="
 }
+
+provisioning_start
 
 
 
