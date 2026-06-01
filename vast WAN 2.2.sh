@@ -79,8 +79,6 @@ LORA_MODELS=(
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/slop_twerk_LowNoise_merged3_7_v2.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan%202.2/SmoothXXXAnimation_High.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan%202.2/SmoothXXXAnimation_Low.safetensors"
-    "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan%202.2/wan2.2-i2v-high-oral-insertion-v1.0.safetensors"
-    "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan%202.2/wan2.2-i2v-low-oral-insertion-v1.0.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/Furry_Enhancer_Wan22_V3_High_Noise_I2V.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/Furry_Enhancer_Wan22_V3_Low_Noise_I2V.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan%202.2/TRANSCOWGIRLHIGH.safetensors"
@@ -95,8 +93,6 @@ LORA_MODELS=(
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan%202.2/i2v-anus-squirt_low_noise.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan%202.2/WAN2.2AssholeHIGHI2Ve68.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan%202.2/WAN2.2AssholeLOWI2Ve41.safetensors"
-    "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan%202.2/wan22_i2v_hip_shake_high_v2.safetensors"
-    "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan%202.2/wan22_i2v_hip_shake_low_v2.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan%202.2/I2V-WAN2.2-POVFaceSitting-2.0-HighNoise_-000032.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan%202.2/I2V-WAN2.2-POVFaceSitting-2.0-LowNoise_-000020.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan%202.2/wan2.2_i2v_high_ulitmate_pussy_asshole.safetensors"
@@ -107,8 +103,12 @@ LORA_MODELS=(
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan%202.2/wan22-jellyhips-i2v-23epoc-low-k3nk.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan%202.2/TWERKI2VHIGH.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan%202.2/TWERKI2VLOW.safetensors"
-    "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan%202.2/plug_pull_hn_2250.safetensors"
-    "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/wan%202.2/plug_pull_ln_5000.safetensors"
+    "https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/LoRAs/Stable-Video-Infinity/v2.0/SVI_v2_PRO_Wan2.2-I2V-A14B_LOW_lora_rank_128_fp16.safetensors"
+    "https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/LoRAs/Stable-Video-Infinity/v2.0/SVI_v2_PRO_Wan2.2-I2V-A14B_HIGH_lora_rank_128_fp16.safetensors"
+    "https://huggingface.co/KeyOpening8063587/FutaCumshot/resolve/main/cum4_h_30.safetensors"
+    "https://huggingface.co/KeyOpening8063587/futacumshotlow/resolve/main/cum4_l_75.safetensors"
+    "https://huggingface.co/Sentinel7/wan/resolve/main/2371603/2682405/wan22_i2v_zxtp_hip_sway_high_type2_r1.safetensors"
+    "https://huggingface.co/Sentinel7/wan/resolve/main/2371603/2682415/wan22_i2v_zxtp_hip_sway_low_type2_r1.safetensors"
 )
 
 VAE_MODELS=(
@@ -179,7 +179,7 @@ function provisioning_get_pip_packages() {
 
 # We must be at release tag v0.3.49 or greater for fp8 support
 provisioning_update_comfyui() {
-    required_tag="v0.5.1"
+    required_tag="v0.22.0"
     cd ${COMFYUI_DIR}
     git fetch --all --tags
     current_commit=$(git rev-parse HEAD)
