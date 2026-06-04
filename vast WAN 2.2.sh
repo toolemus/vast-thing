@@ -26,7 +26,6 @@ NODES=(
     "https://github.com/yolain/ComfyUI-Easy-Use"
     "https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite"
     "https://github.com/chrisgoringe/cg-use-everywhere"
-    "https://github.com/LAOGOU-666/Comfyui-Memory_Cleanup"
     "https://github.com/VAST-AI-Research/ComfyUI-Tripo"
     "https://github.com/Smirnov75/ComfyUI-mxToolkit"
     "https://github.com/jamesWalker55/comfyui-various"
@@ -39,6 +38,7 @@ NODES=(
     "https://github.com/ShmuelRonen/ComfyUI-WanVideoKsampler"
     "https://github.com/willmiao/ComfyUI-Lora-Manager"
     "https://github.com/MoonGoblinDev/Civicomfy"
+    "https://github.com/LAOGOU-666/Comfyui-Memory_Cleanup"
 )
 
 WORKFLOWS=(
