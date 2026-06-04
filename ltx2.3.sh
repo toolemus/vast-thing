@@ -14,6 +14,7 @@ PIP_PACKAGES=(
     #"sageattention-2.2.0-cp312-cp312-linux_x86_64.whl"
     "sageattention"
     "mediapipe"
+    "soundfile"
 )
 
 NODES=(
