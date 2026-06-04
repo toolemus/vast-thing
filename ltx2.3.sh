@@ -65,6 +65,11 @@ TEXT_ENCODERS=(
 
 LORA_MODELS=(
     "https://huggingface.co/TenStrip/LTX2.3_Distilled_Lora_1.1_Experiments/resolve/main/ltx-2.3-22b-distilled-lora-1.1_fro90_ceil72_condsafe.safetensors"
+    "https://huggingface.co/malias/ltx-stack/resolve/main/LTX2.3_Breasts_Jiggle_Physics.safetensors"
+    "https://huggingface.co/olivv-cs/ltx2_vast/resolve/main/LTX2.3_reasoning_I2V_V3.safetensors"
+    "https://huggingface.co/Sentinel7/ltxv/resolve/main/2344781/2778953/LTX2.3-NSFWMOTION_00750.safetensors"
+    "https://huggingface.co/jmew1989/CMFUI/resolve/main/ltx23/nsfw_riding_backshot_frontshot_ltx23_v1.0.safetensors"
+
 )
 
 VAE_MODELS=(
