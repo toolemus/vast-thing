@@ -38,6 +38,7 @@ NODES=(
     "https://github.com/ClownsharkBatwing/RES4LYF"
     "https://github.com/willmiao/ComfyUI-Lora-Manager"
     "https://github.com/gseth/ControlAltAI-Nodes"
+    "https://github.com/jamesWalker55/comfyui-various"
 )
 
 LATENT_UPSCALE_MODELS=(
