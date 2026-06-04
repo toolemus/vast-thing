@@ -13,41 +13,42 @@ APT_PACKAGES=(
 PIP_PACKAGES=(
     #"sageattention-2.2.0-cp312-cp312-linux_x86_64.whl"
     "sageattention"
+    "mediapipe"
 )
 
 NODES=(
+    "https://github.com/LAOGOU-666/Comfyui-Memory_Cleanup"
+    "https://github.com/MoonGoblinDev/Civicomfy"
+    "https://github.com/crystian/comfyui-crystools"
+    "https://github.com/Fannovel16/ComfyUI-Frame-Interpolation"
+    "https://github.com/yolain/ComfyUI-Easy-Use"
+    "https://github.com/rgthree/rgthree-comfy"
+    "https://github.com/kijai/ComfyUI-KJNodes"
+    "https://github.com/jamesWalker55/comfyui-various"
+    "https://github.com/TenStrip/10S-Comfy-nodes"
+    "https://github.com/Smirnov75/ComfyUI-mxToolkit"
+    "https://github.com/Lightricks/ComfyUI-LTXVideo"
+    "https://github.com/evanspearman/ComfyMath"
+    "https://github.com/Fannovel16/ComfyUI-Frame-Interpolation"
     "https://github.com/ltdrdata/ComfyUI-Manager"
     "https://github.com/cubiq/ComfyUI_essentials"
     "https://github.com/kijai/ComfyUI-WanVideoWrapper"
-    "https://github.com/crystian/comfyui-crystools"
-    "https://github.com/kijai/ComfyUI-KJNodes"
-    "https://github.com/Fannovel16/ComfyUI-Frame-Interpolation"
-    "https://github.com/rgthree/rgthree-comfy"
-    "https://github.com/yolain/ComfyUI-Easy-Use"
     "https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite"
-    "https://github.com/chrisgoringe/cg-use-everywhere"
-    "https://github.com/VAST-AI-Research/ComfyUI-Tripo"
-    "https://github.com/Smirnov75/ComfyUI-mxToolkit"
-    "https://github.com/jamesWalker55/comfyui-various"
-    "https://github.com/orssorbit/ComfyUI-wanBlockswap"
-    "https://github.com/aria1th/ComfyUI-LogicUtils"
-    "https://github.com/chibiace/ComfyUI-Chibi-Nodes"
-    "https://github.com/alt-key-project/comfyui-dream-video-batches"
-    "https://github.com/stduhpf/ComfyUI-WanMoeKSampler"
-    "https://github.com/plugcrypt/CRT-Nodes"
-    "https://github.com/ShmuelRonen/ComfyUI-WanVideoKsampler"
+    "https://github.com/Comfy-Org/Nvidia_RTX_Nodes_ComfyUI"
+    "https://github.com/ClownsharkBatwing/RES4LYF"
     "https://github.com/willmiao/ComfyUI-Lora-Manager"
-    "https://github.com/MoonGoblinDev/Civicomfy"
-    "https://github.com/LAOGOU-666/Comfyui-Memory_Cleanup"
+    "https://github.com/gseth/ControlAltAI-Nodes"
 )
 
-WORKFLOWS=(
+LATENT_UPSCALE_MODELS=(
+    "https://huggingface.co/Lightricks/LTX-2.3/resolve/main/ltx-2.3-spatial-upscaler-x2-1.1.safetensors"
 )
 
 INPUT=(
 )
 
 CHECKPOINT_MODELS=(
+    "https://huggingface.co/TenStrip/LTX2.3-10Eros/resolve/main/10Eros_v1-fp8mixed_learned.safetensors"
 )
 
 DIFFUSION_MODELS=(
@@ -57,9 +58,11 @@ CLIP_MODELS=(
 )
 
 TEXT_ENCODERS=(
+    "https://huggingface.co/GitMylo/LTX-2-comfy_gemma_fp8_e4m3fn/resolve/main/gemma_3_12B_it_fp8_e4m3fn.safetensors"
 )
 
 LORA_MODELS=(
+    "https://huggingface.co/TenStrip/LTX2.3_Distilled_Lora_1.1_Experiments/resolve/main/ltx-2.3-22b-distilled-lora-1.1_fro90_ceil72_condsafe.safetensors"
 )
 
 VAE_MODELS=(
@@ -85,6 +88,9 @@ function provisioning_start() {
     provisioning_get_files \
         "${COMFYUI_DIR}/input" \
         "${INPUT[@]}"
+    provisioning_get_files \
+        "${COMFYUI_DIR}/models/latent_upscale_models" \
+        "${LATENT_UPSCALE_MODELS[@]}"
     provisioning_get_files \
         "${COMFYUI_DIR}/models/checkpoints" \
         "${CHECKPOINT_MODELS[@]}"
