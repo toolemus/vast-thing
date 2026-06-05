@@ -69,6 +69,7 @@ LORA_MODELS=(
     "https://huggingface.co/olivv-cs/ltx2_vast/resolve/main/LTX2.3_reasoning_I2V_V3.safetensors"
     "https://huggingface.co/Sentinel7/ltxv/resolve/main/2344781/2778953/LTX2.3-NSFWMOTION_00750.safetensors"
     "https://huggingface.co/jmew1989/CMFUI/resolve/main/ltx23/nsfw_riding_backshot_frontshot_ltx23_v1.0.safetensors"
+    "https://huggingface.co/XLB666/LTXloras/resolve/main/DR34ML4Y_LTXXX_V2.safetensors"
 
 )
 
