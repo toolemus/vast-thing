@@ -50,7 +50,8 @@ INPUT=(
 )
 
 CHECKPOINT_MODELS=(
-    "https://huggingface.co/TenStrip/LTX2.3-10Eros/resolve/main/10Eros_v1-fp8mixed_learned.safetensors"
+    #"https://huggingface.co/TenStrip/LTX2.3-10Eros/resolve/main/10Eros_v1-fp8mixed_learned.safetensors"
+    "https://huggingface.co/TenStrip/LTX2.3-10Eros/resolve/main/10Eros_v1_bf16.safetensors"
 )
 
 DIFFUSION_MODELS=(
