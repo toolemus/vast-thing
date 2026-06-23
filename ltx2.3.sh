@@ -51,7 +51,8 @@ INPUT=(
 
 CHECKPOINT_MODELS=(
     #"https://huggingface.co/TenStrip/LTX2.3-10Eros/resolve/main/10Eros_v1-fp8mixed_learned.safetensors"
-    "https://huggingface.co/TenStrip/LTX2.3-10Eros/resolve/main/10Eros_v1_bf16.safetensors"
+    #https://huggingface.co/TenStrip/LTX2.3-10Eros/resolve/main/10Eros_v1_bf16.safetensors"
+    "https://huggingface.co/TenStrip/LTX2.3-10Eros/resolve/main/10Eros_v1.2_bf16.safetensors"
 )
 
 DIFFUSION_MODELS=(
@@ -67,8 +68,9 @@ TEXT_ENCODERS=(
 LORA_MODELS=(
     "https://huggingface.co/TenStrip/LTX2.3_Distilled_Lora_1.1_Experiments/resolve/main/ltx-2.3-22b-distilled-lora-1.1_fro90_ceil72_condsafe.safetensors"
     "https://huggingface.co/malias/ltx-stack/resolve/main/LTX2.3_Breasts_Jiggle_Physics.safetensors"
-    "https://huggingface.co/olivv-cs/ltx2_vast/resolve/main/LTX2.3_reasoning_I2V_V3.safetensors"
-    "https://huggingface.co/Sentinel7/ltxv/resolve/main/2344781/2778953/LTX2.3-NSFWMOTION_00750.safetensors"
+    #"https://huggingface.co/olivv-cs/ltx2_vast/resolve/main/LTX2.3_reasoning_I2V_V3.safetensors"
+    "https://huggingface.co/cdkkkk/setup/resolve/main/ltx2/sulphur/LTX2.3_reasoning_Sulphur-2_I2V_V4.safetensors"
+    "https://huggingface.co/kirk86413/help3/resolve/main/Sulphur_LTX%202.3_better%20_NSFW_motion.safetensors"
     "https://huggingface.co/jmew1989/CMFUI/resolve/main/ltx23/nsfw_riding_backshot_frontshot_ltx23_v1.0.safetensors"
     "https://huggingface.co/XLB666/LTXloras/resolve/main/DR34ML4Y_LTXXX_V2.safetensors"
     "https://huggingface.co/Sentinel7/ltxv/resolve/main/2483655/2792344/cowgirl-ride-withfuta.safetensors"

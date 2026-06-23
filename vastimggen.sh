@@ -46,6 +46,9 @@ TEXT_ENCODERS=(
 )
 
 LORA_MODELS=(
+    "https://huggingface.co/Alptekinege/iluslora/resolve/main/zy_illustrious_Realism_Enhancer_v1.safetensors"
+    "https://huggingface.co/nyaa314/lora/resolve/main/illustrious/ILXL_Realism_Slider_V.1.safetensors"
+    "https://huggingface.co/Nomanola/sdxl_loras/resolve/main/StS-Illustrious-Detail-Slider-v1.0.safetensors"
 )
 
 VAE_MODELS=(
