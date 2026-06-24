@@ -75,6 +75,7 @@ LORA_MODELS=(
     "https://huggingface.co/XLB666/LTXloras/resolve/main/DR34ML4Y_LTXXX_V2.safetensors"
     "https://huggingface.co/Sentinel7/ltxv/resolve/main/2483655/2792344/cowgirl-ride-withfuta.safetensors"
     "https://huggingface.co/yamanakaaa2015/mymodel/resolve/main/LTX2/SynthPussy_01_rank32.safetensors"
+    "https://huggingface.co/muntedslunt/g5443f/resolve/main/Furry%20Enhancer%20Video%20v4.094%20-%20LTX2.3.safetensors"
 
 )
 
