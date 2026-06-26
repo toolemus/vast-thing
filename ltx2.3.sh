@@ -18,7 +18,7 @@ PIP_PACKAGES=(
 )
 
 MISC_PACKAGES=(
-    ""kornia>=0.6.12,<0.8.0" --force-reinstall"
+    "kornia>=0.6.12,<0.8.0 --force-reinstall"
     "torch==2.10.0 torchvision==0.25.0+cu128 torchaudio==2.10.0+cu128 --extra-index-url https://pytorch.org/"
 )
 
