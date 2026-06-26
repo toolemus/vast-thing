@@ -100,6 +100,7 @@ function provisioning_start() {
     provisioning_update_comfyui
     provisioning_get_nodes
     provisioning_get_pip_packages
+    provisioning_get_misc_packages
     provisioning_get_files \
         "${workflows_dir}" \
         "${WORKFLOWS[@]}"
