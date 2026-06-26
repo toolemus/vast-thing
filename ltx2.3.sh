@@ -17,6 +17,11 @@ PIP_PACKAGES=(
     "soundfile"
 )
 
+MISC_PACKAGES=(
+    ""kornia>=0.6.12,<0.8.0" --force-reinstall"
+    "torch==2.10.0 torchvision==0.25.0+cu128 torchaudio==2.10.0+cu128 --extra-index-url https://pytorch.org/"
+)
+
 NODES=(
     "https://github.com/LAOGOU-666/Comfyui-Memory_Cleanup"
     "https://github.com/MoonGoblinDev/Civicomfy"
@@ -30,7 +35,6 @@ NODES=(
     "https://github.com/Smirnov75/ComfyUI-mxToolkit"
     "https://github.com/Lightricks/ComfyUI-LTXVideo"
     "https://github.com/evanspearman/ComfyMath"
-    "https://github.com/Fannovel16/ComfyUI-Frame-Interpolation"
     "https://github.com/ltdrdata/ComfyUI-Manager"
     "https://github.com/cubiq/ComfyUI_essentials"
     "https://github.com/kijai/ComfyUI-WanVideoWrapper"
@@ -142,6 +146,12 @@ function provisioning_get_pip_packages() {
     if [[ -n $PIP_PACKAGES ]]; then
             #wget --content-disposition -P /workspace/ComfyUI "https://huggingface.co/Kijai/PrecompiledWheels/resolve/main/sageattention-2.2.0-cp312-cp312-linux_x86_64.whl"
             pip install --no-cache-dir ${PIP_PACKAGES[@]}
+    fi
+}
+
+function provisioning_get_misc_packages() {
+    if [[ -n $MISC_PACKAGES ]]; then
+            pip install --no-cache-dir ${MISC_PACKAGES[@]}
     fi
 }
 
