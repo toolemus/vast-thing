@@ -24,6 +24,7 @@ NODES=(
     "https://github.com/jamesWalker55/comfyui-various"
     "https://github.com/willmiao/ComfyUI-Lora-Manager"
     "https://github.com/MoonGoblinDev/Civicomfy"
+    "https://github.com/rgthree/rgthree-comfy"
 )
 
 WORKFLOWS=(
