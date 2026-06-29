@@ -35,6 +35,8 @@ INPUT=(
 
 CHECKPOINT_MODELS=(
     "https://huggingface.co/KirtiKousik/pony_checkpoints/resolve/main/xavier_v10.safetensors"
+    "https://civitai.com/api/download/models/2349305"
+    "https://huggingface.co/Ba96/dss/resolve/main/indigoFurryMixXL_cknoobEPS11.safetensors"
 )
 
 DIFFUSION_MODELS=(
