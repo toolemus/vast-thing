@@ -35,7 +35,7 @@ INPUT=(
 
 CHECKPOINT_MODELS=(
     "https://huggingface.co/KirtiKousik/pony_checkpoints/resolve/main/xavier_v10.safetensors"
-    "https://civitai.com/api/download/models/2349305"
+    "https://huggingface.co/JackyCoo/CivitAI_backups/resolve/main/xavierVOIDFUSED_v10.safetensors"
     "https://huggingface.co/Ba96/dss/resolve/main/indigoFurryMixXL_cknoobEPS11.safetensors"
 )
 
@@ -52,7 +52,7 @@ LORA_MODELS=(
     "https://huggingface.co/Alptekinege/iluslora/resolve/main/zy_illustrious_Realism_Enhancer_v1.safetensors"
     "https://huggingface.co/nyaa314/lora/resolve/main/illustrious/ILXL_Realism_Slider_V.1.safetensors"
     "https://huggingface.co/Nomanola/sdxl_loras/resolve/main/StS-Illustrious-Detail-Slider-v1.0.safetensors"
-    "https://civitai.com/api/download/models/2899942"
+    "https://huggingface.co/JackyCoo/CivitAI_backups/resolve/main/BlueCat_modified.safetensors"
 )
 
 VAE_MODELS=(
