@@ -37,6 +37,7 @@ CHECKPOINT_MODELS=(
     "https://huggingface.co/KirtiKousik/pony_checkpoints/resolve/main/xavier_v10.safetensors"
     "https://huggingface.co/JackyCoo/CivitAI_backups/resolve/main/xavierVOIDFUSED_v10.safetensors"
     "https://huggingface.co/Ba96/dss/resolve/main/indigoFurryMixXL_cknoobEPS11.safetensors"
+    "https://huggingface.co/LeFeujitif/sandbox/resolve/main/waiIllustriousSDXL_v160.safetensors"
 )
 
 DIFFUSION_MODELS=(
