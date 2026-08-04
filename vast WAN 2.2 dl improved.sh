@@ -189,7 +189,7 @@ function provisioning_get_files() {
     arr=("$@")
 
     printf "Downloading %s model(s) to %s...\n" "${#arr[@]}" "$dir"
-    
+
     for url in "${arr[@]}"; do
         printf "Downloading: %s\n" "${url}"
         provisioning_download "${url}" "${dir}"
@@ -257,7 +257,7 @@ function provisioning_download() {
     local splits=8
     local chunk_size="16M"
 
-    if [[ $size_mb -eq 0 || $size_mb -lt 500 ]]; then
+    if [[ $size_mb -eq 0 || $size_mb -lt 900 ]]; then
         echo "Detected small file (${size_mb}MB). Using lightweight download profile..."
         connections=2
         splits=2
