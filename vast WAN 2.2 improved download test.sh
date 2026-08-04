@@ -191,11 +191,13 @@ function provisioning_download() {
 
     aria2c \
         --continue=true \
-        --max-connection-per-server=4 \
+        --max-connection-per-server=8 \
         --split="$ARIA_THREADS" \
         --min-split-size=4M \
-        --max-tries=10 \
-        --retry-wait=5 \
+        --max-tries=20 \
+        --retry-wait=3 \
+        --uri-selector=inorder \
+        --no-netrc=true \
         --summary-interval=5 \
         --dir="$out_dir" \
         --out="$filename" \
