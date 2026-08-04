@@ -2,7 +2,7 @@
 
 source /venv/main/bin/activate
 COMFYUI_DIR=${WORKSPACE}/ComfyUI
-ARIA_THREADS=4
+ARIA_THREADS=8
 
 # Packages are installed after nodes so we can fix them...
 
@@ -191,7 +191,7 @@ function provisioning_download() {
 
     aria2c \
         --continue=true \
-        --max-connection-per-server=8 \
+        --max-connection-per-server=16 \
         --split="$ARIA_THREADS" \
         --min-split-size=1M \
         --summary-interval=5 \
