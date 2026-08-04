@@ -189,16 +189,39 @@ function provisioning_download() {
     local filename=$(basename "$url")
     local auth_header=""
 
+    local size_mb=0
+    local size_bytes
+
+    size_bytes=$(curl -sI -L ${auth_header/--header=/ -H } "$url" | grep -i 'content-length' | awk '{print $2}' | tr -d '\r' | tail -n1)
+
+    if [[ -n "$size_bytes" && "$size_bytes" -gt 0 ]]; then
+        size_mb=$(( size_bytes / 1024 / 1024 ))
+    fi
+
+    local connections=4
+    local splits=8
+    local chunk_size="16M"
+
+    if [[ $size_mb -eq 0 || $size_mb -lt 500 ]]; then
+        echo "Detected small file (${size_mb}MB). Using lightweight download profile..."
+        connections=1
+        splits=2
+        chunk_size="1M"
+    else
+        echo "Detected large file (${size_mb}MB). Using heavy multi-threaded profile..."
+    fi
+
     aria2c \
         --continue=true \
-        --max-connection-per-server=8 \
-        --split="$ARIA_THREADS" \
-        --min-split-size=4M \
-        --max-tries=20 \
-        --retry-wait=3 \
-        --uri-selector=inorder \
+        --disk-cache=64M \
+        --max-connection-per-server="$connections" \
+        --split="$splits" \
+        --min-split-size="$chunk_size" \
+        --max-tries=15 \
+        --retry-wait=5 \
         --no-netrc=true \
-        --summary-interval=5 \
+        --timeout=20 \
+        --summary-interval=10 \
         --dir="$out_dir" \
         --out="$filename" \
         "$url"
