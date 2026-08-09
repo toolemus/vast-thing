@@ -32,6 +32,7 @@ CHECKPOINT_MODELS=(
     "https://huggingface.co/JackyCoo/CivitAI_backups/resolve/main/xavierVOIDFUSED_v10.safetensors"
     "https://huggingface.co/Ba96/dss/resolve/main/indigoFurryMixXL_cknoobEPS11.safetensors"
     "https://huggingface.co/LeFeujitif/sandbox/resolve/main/waiIllustriousSDXL_v160.safetensors"
+    "https://huggingface.co/cirno723/ab/resolve/main/waiIllustriousSDXL_v170.safetensors"
 )
 
 DIFFUSION_MODELS=(
@@ -50,6 +51,8 @@ LORA_MODELS=(
     "https://huggingface.co/JackyCoo/CivitAI_backups/resolve/main/BlueCat_modified.safetensors"
     "https://huggingface.co/quarantineearth/wan/resolve/main/BallsDeep-IL-V2.2-S.safetensors"
     "https://huggingface.co/SurpassHR/ConceptLoraBackup/resolve/main/analtuggingill_333.safetensors"
+    "https://huggingface.co/LyliaEngine/cfg_scale_boost/resolve/main/cfg_scale_boost.safetensors"
+    "https://huggingface.co/minaiosu/Volnovik/resolve/main/NOOB_vp1_detailer_by_volnovik_v1.safetensors"
 )
 
 VAE_MODELS=(
