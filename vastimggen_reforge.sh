@@ -1,7 +1,7 @@
 #!/bin/bash
 
 source /venv/main/bin/activate
-COMFYUI_DIR=${WORKSPACE}/ComfyUI
+REFORGEDIR=${WORKSPACE}/stable-diffusion-webui-forge
 
 # Packages are installed after nodes so we can fix them...
 
@@ -15,28 +15,12 @@ PIP_PACKAGES=(
     #"package-2"
 )
 
-NODES=(
-    "https://github.com/ltdrdata/ComfyUI-Manager"
-    "https://github.com/cubiq/ComfyUI_essentials"
-    "https://github.com/crystian/comfyui-crystools"
-    "https://github.com/yolain/ComfyUI-Easy-Use"
-    "https://github.com/Smirnov75/ComfyUI-mxToolkit"
-    "https://github.com/jamesWalker55/comfyui-various"
-    "https://github.com/willmiao/ComfyUI-Lora-Manager"
-    "https://github.com/MoonGoblinDev/Civicomfy"
-    "https://github.com/rgthree/rgthree-comfy"
-    "https://github.com/AstrionX/ComfyUI-Tensor-Prism-Node-Pack"
-)
-
 CHECKPOINT_MODELS=(
     "https://huggingface.co/KirtiKousik/pony_checkpoints/resolve/main/xavier_v10.safetensors"
     "https://huggingface.co/JackyCoo/CivitAI_backups/resolve/main/xavierVOIDFUSED_v10.safetensors"
     "https://huggingface.co/Ba96/dss/resolve/main/indigoFurryMixXL_cknoobEPS11.safetensors"
     "https://huggingface.co/LeFeujitif/sandbox/resolve/main/waiIllustriousSDXL_v160.safetensors"
     "https://huggingface.co/cirno723/ab/resolve/main/waiIllustriousSDXL_v170.safetensors"
-)
-
-DIFFUSION_MODELS=(
 )
 
 CLIP_MODELS=(
@@ -73,31 +57,27 @@ function provisioning_start() {
     provisioning_print_header
     provisioning_get_aria2
     provisioning_get_apt_packages
-    provisioning_get_nodes
     provisioning_get_pip_packages
     provisioning_get_files \
-        "${COMFYUI_DIR}/models/checkpoints" \
+        "${REFORGEDIR}/models/Stable-diffusion" \
         "${CHECKPOINT_MODELS[@]}"
     provisioning_get_files \
-        "${COMFYUI_DIR}/models/diffusion_models" \
-        "${DIFFUSION_MODELS[@]}"
-    provisioning_get_files \
-        "${COMFYUI_DIR}/models/text_encoders" \
+        "${REFORGEDIR}/models/text_encoders" \
         "${TEXT_ENCODERS[@]}"
     provisioning_get_files \
-        "${COMFYUI_DIR}/models/loras" \
+        "${REFORGEDIR}/models/lora" \
         "${LORA_MODELS[@]}"
     provisioning_get_files \
-        "${COMFYUI_DIR}/models/controlnet" \
+        "${REFORGEDIR}/models/controlnet" \
         "${CONTROLNET_MODELS[@]}"
     provisioning_get_files \
-        "${COMFYUI_DIR}/models/clip_vision" \
+        "${REFORGEDIR}/models/clip_vision" \
         "${CLIP_MODELS[@]}"
     provisioning_get_files \
-        "${COMFYUI_DIR}/models/vae" \
+        "${REFORGEDIR}/models/vae" \
         "${VAE_MODELS[@]}"
     provisioning_get_files \
-        "${COMFYUI_DIR}/models/upscale_models" \
+        "${REFORGEDIR}/models/upscale_models" \
         "${ESRGAN_MODELS[@]}"
     provisioning_print_end
 }
@@ -119,29 +99,6 @@ function provisioning_get_pip_packages() {
     if [[ -n $PIP_PACKAGES ]]; then
             pip install --no-cache-dir ${PIP_PACKAGES[@]}
     fi
-}
-
-function provisioning_get_nodes() {
-    for repo in "${NODES[@]}"; do
-        dir="${repo##*/}"
-        path="${COMFYUI_DIR}/custom_nodes/${dir}"
-        requirements="${path}/requirements.txt"
-        if [[ -d $path ]]; then
-            if [[ ${AUTO_UPDATE,,} != "false" ]]; then
-                printf "Updating node: %s...\n" "${repo}"
-                ( cd "$path" && git pull )
-                if [[ -e $requirements ]]; then
-                   pip install --no-cache-dir -r "$requirements"
-                fi
-            fi
-        else
-            printf "Downloading node: %s...\n" "${repo}"
-            git clone "${repo}" "${path}" --recursive
-            if [[ -e $requirements ]]; then
-                pip install --no-cache-dir -r "${requirements}"
-            fi
-        fi
-    done
 }
 
 function provisioning_get_files() {
