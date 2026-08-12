@@ -11,8 +11,8 @@ APT_PACKAGES=(
 )
 
 PIP_PACKAGES=(
-    #"sageattention-2.2.0-cp312-cp312-linux_x86_64.whl"
-    "sageattention"
+    "sageattention-2.2.0-cp312-cp312-linux_x86_64.whl"
+    #"sageattention"
 )
 
 NODES=(
@@ -39,6 +39,8 @@ NODES=(
     "https://github.com/willmiao/ComfyUI-Lora-Manager"
     "https://github.com/MoonGoblinDev/Civicomfy"
     "https://github.com/LAOGOU-666/Comfyui-Memory_Cleanup"
+    "https://github.com/Comfy-Org/Nvidia_RTX_Nodes_ComfyUI"
+    "https://github.com/xmarre/ComfyUI-Spectrum-MiniMax-H3"
 )
 
 CHECKPOINT_MODELS=(
@@ -57,6 +59,7 @@ TEXT_ENCODERS=(
     )
 
 LORA_MODELS=(
+    "https://huggingface.co/Kijai/MiniMax-H3_comfy/resolve/main/loras/minimax_h3_fl2v_lightx2v_turbo_4step_v0.1_comfy.safetensors"
 )
 
 VAE_MODELS=(
@@ -116,7 +119,7 @@ function provisioning_get_apt_packages() {
 
 function provisioning_get_pip_packages() {
     if [[ -n $PIP_PACKAGES ]]; then
-            #wget --content-disposition -P /workspace/ComfyUI "https://huggingface.co/Kijai/PrecompiledWheels/resolve/main/sageattention-2.2.0-cp312-cp312-linux_x86_64.whl"
+            wget --content-disposition -P /workspace/ComfyUI "https://huggingface.co/Kijai/PrecompiledWheels/resolve/main/sageattention-2.2.0-cp312-cp312-linux_x86_64.whl"
             pip install --no-cache-dir ${PIP_PACKAGES[@]}
     fi
 }

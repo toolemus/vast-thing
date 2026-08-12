@@ -57,6 +57,7 @@ LORA_MODELS=(
 )
 
 VAE_MODELS=(
+    "https://huggingface.co/stabilityai/sdxl-vae/resolve/main/sdxl_vae.safetensors"
 )
 
 ESRGAN_MODELS=(
