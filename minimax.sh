@@ -60,6 +60,12 @@ TEXT_ENCODERS=(
 
 LORA_MODELS=(
     "https://huggingface.co/Kijai/MiniMax-H3_comfy/resolve/main/loras/minimax_h3_fl2v_lightx2v_turbo_4step_v0.1_comfy.safetensors"
+    "https://huggingface.co/TechScribe42/h3-pub/resolve/main/riding_pose_H3_i2v_v1.0.safetensors"
+    "https://huggingface.co/TechScribe42/h3-pub/resolve/main/SynthPussy_H3_closeups_v1-step00008300.safetensors"
+    "https://huggingface.co/TechScribe42/h3-pub/resolve/main/epic_cumshots-MiniMaxH3-ALPHA-CUMSH0T.safetensors"
+    "https://huggingface.co/burnet01/mmh3nsfw/resolve/main/deepthroat_v1.safetensors"
+    "https://huggingface.co/TechScribe42/h3-pub/resolve/main/IcytwerkPROMAX-H3-v1-700ish.safetensors"
+    "https://huggingface.co/jmew1989/CMFUI/resolve/main/MMH3/HMNSFW_AIO_V2.safetensors"
 )
 
 VAE_MODELS=(
@@ -70,6 +76,7 @@ VAE_MODELS=(
 ESRGAN_MODELS=(
     "https://huggingface.co/ai-forever/Real-ESRGAN/resolve/main/RealESRGAN_x4.pth"
     "https://huggingface.co/ai-forever/Real-ESRGAN/resolve/main/RealESRGAN_x2.pth"
+    "https://huggingface.co/Phips/4xNomos8kDAT/resolve/main/4xNomos8kDAT.safetensors"
 )
 
 ### DO NOT EDIT BELOW HERE UNLESS YOU KNOW WHAT YOU ARE DOING ###
