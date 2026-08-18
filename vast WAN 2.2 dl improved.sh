@@ -11,8 +11,8 @@ APT_PACKAGES=(
 )
 
 PIP_PACKAGES=(
-    #"sageattention-2.2.0-cp312-cp312-linux_x86_64.whl"
-    "sageattention"
+    "sageattention-2.2.0-cp312-cp312-linux_x86_64.whl"
+    #"sageattention"
 )
 
 NODES=(
@@ -153,7 +153,7 @@ function provisioning_get_apt_packages() {
 
 function provisioning_get_pip_packages() {
     if [[ -n $PIP_PACKAGES ]]; then
-            #wget --content-disposition -P /workspace/ComfyUI "https://huggingface.co/Kijai/PrecompiledWheels/resolve/main/sageattention-2.2.0-cp312-cp312-linux_x86_64.whl"
+            wget --content-disposition -P /workspace/ComfyUI "https://huggingface.co/Kijai/PrecompiledWheels/resolve/main/sageattention-2.2.0-cp312-cp312-linux_x86_64.whl"
             pip install --no-cache-dir ${PIP_PACKAGES[@]}
     fi
 }
