@@ -11,72 +11,30 @@ APT_PACKAGES=(
 )
 
 PIP_PACKAGES=(
-    "sageattention-2.2.0-cp312-cp312-linux_x86_64.whl"
-    #"sageattention"
+    #"sageattention-2.2.0-cp312-cp312-linux_x86_64.whl"
+    "sageattention"
 )
 
 NODES=(
     "https://github.com/ltdrdata/ComfyUI-Manager"
-    "https://github.com/cubiq/ComfyUI_essentials"
-    "https://github.com/kijai/ComfyUI-WanVideoWrapper"
-    "https://github.com/crystian/comfyui-crystools"
-    "https://github.com/kijai/ComfyUI-KJNodes"
-    "https://github.com/Fannovel16/ComfyUI-Frame-Interpolation"
-    "https://github.com/rgthree/rgthree-comfy"
-    "https://github.com/yolain/ComfyUI-Easy-Use"
-    "https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite"
-    "https://github.com/chrisgoringe/cg-use-everywhere"
-    "https://github.com/VAST-AI-Research/ComfyUI-Tripo"
-    "https://github.com/Smirnov75/ComfyUI-mxToolkit"
-    "https://github.com/jamesWalker55/comfyui-various"
-    "https://github.com/orssorbit/ComfyUI-wanBlockswap"
-    "https://github.com/aria1th/ComfyUI-LogicUtils"
-    "https://github.com/chibiace/ComfyUI-Chibi-Nodes"
-    "https://github.com/alt-key-project/comfyui-dream-video-batches"
-    "https://github.com/stduhpf/ComfyUI-WanMoeKSampler"
-    "https://github.com/plugcrypt/CRT-Nodes"
-    "https://github.com/ShmuelRonen/ComfyUI-WanVideoKsampler"
-    "https://github.com/willmiao/ComfyUI-Lora-Manager"
-    "https://github.com/MoonGoblinDev/Civicomfy"
-    "https://github.com/LAOGOU-666/Comfyui-Memory_Cleanup"
-    "https://github.com/Comfy-Org/Nvidia_RTX_Nodes_ComfyUI"
-    "https://github.com/xmarre/ComfyUI-Spectrum-MiniMax-H3"
 )
 
 CHECKPOINT_MODELS=(
 )
 
 DIFFUSION_MODELS=(
-    "https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/diffusion_models/minimax_h3_fl2va_int8_convrot.safetensors"
-    #"https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/diffusion_models/minimax_h3_ref2va_int8_convrot.safetensors"
-)
-
-CLIP_MODELS=(
 )
 
 TEXT_ENCODERS=(
-    "https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/text_encoders/qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors"
-    )
+)
 
 LORA_MODELS=(
-    "https://huggingface.co/Kutches/minmax/resolve/main/minimax_h3_fl2v_turbo_8step_v1.0_comfyui_bf16.safetensors"
-    "https://huggingface.co/TechScribe42/h3-pub/resolve/main/riding_pose_H3_i2v_v1.0.safetensors"
-    "https://huggingface.co/TechScribe42/h3-pub/resolve/main/SynthPussy_H3_closeups_v1-step00008300.safetensors"
-    "https://huggingface.co/TechScribe42/h3-pub/resolve/main/epic_cumshots-MiniMaxH3-ALPHA-CUMSH0T.safetensors"
-    "https://huggingface.co/burnet01/mmh3nsfw/resolve/main/deepthroat_v1.safetensors"
-    "https://huggingface.co/TechScribe42/h3-pub/resolve/main/IcytwerkPROMAX-H3-v1-700ish.safetensors"
-    "https://huggingface.co/jmew1989/CMFUI/resolve/main/MMH3/HMNSFW_AIO_V2.safetensors"
 )
 
 VAE_MODELS=(
-    "https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/vae/minimax_h3_audio_vae_fp32.safetensors"
-    "https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/vae/minimax_h3_video_vae_fp16.safetensors"
 )
 
 ESRGAN_MODELS=(
-    "https://huggingface.co/ai-forever/Real-ESRGAN/resolve/main/RealESRGAN_x4.pth"
-    "https://huggingface.co/ai-forever/Real-ESRGAN/resolve/main/RealESRGAN_x2.pth"
-    "https://huggingface.co/Phips/4xNomos8kDAT/resolve/main/4xNomos8kDAT.safetensors"
 )
 
 ### DO NOT EDIT BELOW HERE UNLESS YOU KNOW WHAT YOU ARE DOING ###
@@ -99,9 +57,6 @@ function provisioning_start() {
     provisioning_get_files \
         "${COMFYUI_DIR}/models/loras" \
         "${LORA_MODELS[@]}"
-    provisioning_get_files \
-        "${COMFYUI_DIR}/models/clip_vision" \
-        "${CLIP_MODELS[@]}"
     provisioning_get_files \
         "${COMFYUI_DIR}/models/vae" \
         "${VAE_MODELS[@]}"
@@ -126,7 +81,7 @@ function provisioning_get_apt_packages() {
 
 function provisioning_get_pip_packages() {
     if [[ -n $PIP_PACKAGES ]]; then
-            wget --content-disposition -P /workspace/ComfyUI "https://huggingface.co/Kijai/PrecompiledWheels/resolve/main/sageattention-2.2.0-cp312-cp312-linux_x86_64.whl"
+            #wget --content-disposition -P /workspace/ComfyUI "https://huggingface.co/Kijai/PrecompiledWheels/resolve/main/sageattention-2.2.0-cp312-cp312-linux_x86_64.whl"
             pip install --no-cache-dir ${PIP_PACKAGES[@]}
     fi
 }
@@ -156,12 +111,13 @@ function provisioning_get_nodes() {
 
 function provisioning_get_files() {
     if [[ -z $2 ]]; then return 1; fi
-    
     dir="$1"
     mkdir -p "$dir"
     shift
     arr=("$@")
+
     printf "Downloading %s model(s) to %s...\n" "${#arr[@]}" "$dir"
+
     for url in "${arr[@]}"; do
         printf "Downloading: %s\n" "${url}"
         provisioning_download "${url}" "${dir}"
@@ -259,3 +215,41 @@ if [[ ! -f /.noprovisioning ]]; then
     provisioning_start
 
 fi
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
