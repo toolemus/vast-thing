@@ -62,10 +62,9 @@ LORA_MODELS=(
     "https://huggingface.co/Kutches/minmax/resolve/main/minimax_h3_fl2v_turbo_8step_v1.0_comfyui_bf16.safetensors"
     "https://huggingface.co/TechScribe42/h3-pub/resolve/main/riding_pose_H3_i2v_v1.0.safetensors"
     "https://huggingface.co/TechScribe42/h3-pub/resolve/main/SynthPussy_H3_closeups_v1-step00008300.safetensors"
-    "https://huggingface.co/TechScribe42/h3-pub/resolve/main/epic_cumshots-MiniMaxH3-ALPHA-CUMSH0T.safetensors"
-    "https://huggingface.co/burnet01/mmh3nsfw/resolve/main/deepthroat_v1.safetensors"
-    "https://huggingface.co/TechScribe42/h3-pub/resolve/main/IcytwerkPROMAX-H3-v1-700ish.safetensors"
-    "https://huggingface.co/jmew1989/CMFUI/resolve/main/MMH3/HMNSFW_AIO_V2.safetensors"
+    "https://huggingface.co/jmew1989/CMFUI/resolve/main/MMH3/MM-H3%20-%20Blowjob%20v2.1.safetensors"
+    "https://huggingface.co/cdkkkk/setup/resolve/main/h3/MysticXXX_MMH3-V4.safetensors"
+    "https://huggingface.co/Soulvarius/WAN2.2_Likeness_Soulvarius_1000steps/resolve/main/PenisV2_minimax-h3_epoch60.safetensors"
 )
 
 VAE_MODELS=(
