@@ -96,8 +96,7 @@ CONTROLNET_MODELS=(
 
 function provisioning_start() {
     provisioning_print_header
-    provisioning_get_apt_packages
-    provisioning_update_comfyui
+    provisioning_get_aria2
     provisioning_get_nodes
     provisioning_get_pip_packages
     provisioning_get_misc_packages
@@ -137,6 +136,13 @@ function provisioning_start() {
     provisioning_print_end
 }
 
+function provisioning_get_aria2() {
+    if ! command -v aria2c &> /dev/null; then
+        printf "Installing aria2 package...\n"
+        sudo apt-get update && sudo apt-get install -y aria2
+    fi
+}
+
 function provisioning_get_apt_packages() {
     if [[ -n $APT_PACKAGES ]]; then
             sudo $APT_INSTALL ${APT_PACKAGES[@]}
@@ -153,19 +159,6 @@ function provisioning_get_pip_packages() {
 function provisioning_get_misc_packages() {
     if [[ -n $MISC_PACKAGES ]]; then
             pip install --no-cache-dir ${MISC_PACKAGES[@]}
-    fi
-}
-
-# We must be at release tag v0.3.49 or greater for fp8 support
-provisioning_update_comfyui() {
-    required_tag="v0.22.0"
-    cd ${COMFYUI_DIR}
-    git fetch --all --tags
-    current_commit=$(git rev-parse HEAD)
-    required_commit=$(git rev-parse "$required_tag")
-    if git merge-base --is-ancestor "$current_commit" "$required_commit"; then
-        git checkout "$required_tag"
-        pip install --no-cache-dir -r requirements.txt
     fi
 }
 
@@ -249,17 +242,47 @@ function provisioning_has_valid_civitai_token() {
 
 # Download from $1 URL to $2 file path
 function provisioning_download() {
-    if [[ -n $HF_TOKEN && $1 =~ ^https://([a-zA-Z0-9_-]+\.)?huggingface\.co(/|$|\?) ]]; then
-        auth_token="$HF_TOKEN"
-    elif 
-        [[ -n $CIVITAI_TOKEN && $1 =~ ^https://([a-zA-Z0-9_-]+\.)?civitai\.com(/|$|\?) ]]; then
-        auth_token="$CIVITAI_TOKEN"
+    local url="$1"
+    local out_dir="$2"
+    local filename=$(basename "$url")
+    local auth_header=""
+
+    local size_mb=0
+    local size_bytes
+
+    size_bytes=$(curl -sI -L ${auth_header/--header=/ -H } "$url" | grep -i 'content-length' | awk '{print $2}' | tr -d '\r' | tail -n1)
+
+    if [[ -n "$size_bytes" && "$size_bytes" -gt 0 ]]; then
+        size_mb=$(( size_bytes / 1024 / 1024 ))
     fi
-    if [[ -n $auth_token ]];then
-        wget --header="Authorization: Bearer $auth_token" -qnc --content-disposition --show-progress -e dotbytes="${3:-4M}" -P "$2" "$1"
+
+    local connections=4
+    local splits=8
+    local chunk_size="16M"
+
+    if [[ $size_mb -eq 0 || $size_mb -lt 900 ]]; then
+        echo "Detected small file (${size_mb}MB). Using lightweight download profile..."
+        connections=2
+        splits=2
+        chunk_size="1M"
     else
-        wget -qnc --content-disposition --show-progress -e dotbytes="${3:-4M}" -P "$2" "$1"
+        echo "Detected large file (${size_mb}MB). Using heavy multi-threaded profile..."
     fi
+
+    aria2c \
+        --continue=true \
+        --disk-cache=64M \
+        --max-connection-per-server="$connections" \
+        --split="$splits" \
+        --min-split-size="$chunk_size" \
+        --max-tries=15 \
+        --retry-wait=5 \
+        --no-netrc=true \
+        --timeout=20 \
+        --summary-interval=10 \
+        --dir="$out_dir" \
+        --out="$filename" \
+        "$url"
 }
 
 # Allow user to disable provisioning if they started with a script they didn't want
