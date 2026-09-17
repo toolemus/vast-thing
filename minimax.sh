@@ -65,6 +65,10 @@ LORA_MODELS=(
     "https://huggingface.co/jmew1989/CMFUI/resolve/main/MMH3/MM-H3%20-%20Blowjob%20v2.1.safetensors"
     "https://huggingface.co/cdkkkk/setup/resolve/main/h3/MysticXXX_MMH3-V4.safetensors"
     "https://huggingface.co/Soulvarius/WAN2.2_Likeness_Soulvarius_1000steps/resolve/main/PenisV2_minimax-h3_epoch60.safetensors"
+    "https://huggingface.co/fiojanea/Esan_testi/resolve/main/MiniMax%20H3%20-%20ThumbInButt.safetensors"
+    "https://huggingface.co/DevXCoder2025/gen-video-v4/resolve/main/ComfyUI/models/loras/Furry%20enhancer%20Video%20H3_V2.54.safetensors"
+    "https://civitai.com/api/download/models/3283175"
+    "https://huggingface.co/DevXCoder2025/gen-video-v4/resolve/main/ComfyUI/models/loras/IcySlap_v1.safetensors"
 )
 
 VAE_MODELS=(
