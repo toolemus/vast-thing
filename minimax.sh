@@ -129,7 +129,7 @@ function provisioning_get_apt_packages() {
 
 function provisioning_get_pip_packages() {
     if [[ -n $PIP_PACKAGES ]]; then
-            wget --content-disposition -P /workspace/ComfyUI "https://huggingface.co/Kijai/PrecompiledWheels/resolve/main/sageattention-2.2.0-cp312-cp312-linux_x86_64.whl"
+            wget --content-disposition -P /workspace/ "https://huggingface.co/yo9otatara/prebuilt_wheels/resolve/main/sageattention-2.2.0%2Bcu128torch2.10.0sm120-cp312-cp312-linux_x86_64.whl"
             pip install --no-cache-dir ${PIP_PACKAGES[@]}
     fi
 }
