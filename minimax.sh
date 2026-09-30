@@ -61,7 +61,6 @@ TEXT_ENCODERS=(
 LORA_MODELS=(
     "https://huggingface.co/Kutches/minmax/resolve/main/minimax_h3_fl2v_turbo_8step_v1.0_comfyui_bf16.safetensors"
     "https://huggingface.co/TechScribe42/h3-pub/resolve/main/riding_pose_H3_i2v_v1.0.safetensors"
-    "https://huggingface.co/jmew1989/CMFUI/resolve/main/MMH3/MM-H3%20-%20Blowjob%20v2.1.safetensors"
     "https://huggingface.co/cdkkkk/setup/resolve/main/h3/MysticXXX_MMH3-V4.safetensors"
     "https://huggingface.co/Soulvarius/WAN2.2_Likeness_Soulvarius_1000steps/resolve/main/PenisV2_minimax-h3_epoch60.safetensors"
     "https://huggingface.co/fiojanea/Esan_testi/resolve/main/MiniMax%20H3%20-%20ThumbInButt.safetensors"
@@ -69,6 +68,8 @@ LORA_MODELS=(
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/Minimax%20H3/IcySlap_v1.safetensors"
     "https://huggingface.co/VixenQuest/MMH3/resolve/main/H3_VBVR_Pro_attn_only.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/Minimax%20H3/H3_Slop_Twerk_LoRa_V0.2_epoch_6.safetensors"
+    "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/Minimax%20H3/Minimax_H3_Unlocked_V2.safetensors"
+    "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/Minimax%20H3/MM-H3%20-%20Blowjob%20v3.safetensors"
 )
 
 VAE_MODELS=(
