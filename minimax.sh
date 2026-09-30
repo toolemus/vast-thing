@@ -11,7 +11,7 @@ APT_PACKAGES=(
 )
 
 PIP_PACKAGES=(
-    "sageattention-2.2.0-cp312-cp312-linux_x86_64.whl"
+    "sageattention-2.2.0+cu128torch2.10.0sm120-cp312-cp312-linux_x86_64.whl"
     #"sageattention"
 )
 
