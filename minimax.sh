@@ -70,6 +70,7 @@ LORA_MODELS=(
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/Minimax%20H3/H3_Slop_Twerk_LoRa_V0.2_epoch_6.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/Minimax%20H3/MM-H3%20-%20Blowjob%20v3.safetensors"
     "https://huggingface.co/GoSilla/DR34ML4Y_H3/resolve/main/H3_DR34ML4Y_P1.safetensors"
+    "https://huggingface.co/penumbralt/test-debug/resolve/main/testdebug.safetensors"
     "https://huggingface.co/wingbrother/MySelectedDiffusions/resolve/main/lora/minimaxh3/NSFW_3d_animation_helper.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/Minimax%20H3/H3_VBVR_Pro-V2.safetensors"
 )
