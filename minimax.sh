@@ -41,6 +41,9 @@ NODES=(
     "https://github.com/LAOGOU-666/Comfyui-Memory_Cleanup"
     "https://github.com/Comfy-Org/Nvidia_RTX_Nodes_ComfyUI"
     "https://github.com/xmarre/ComfyUI-Spectrum-MiniMax-H3"
+    "https://github.com/LBH-123-AI/Comfyui_Minimax_h3_latent_Upscaler"
+    "https://github.com/LordLocksley/ComfyUI-Lokken-VideoTools"
+    "https://github.com/cicalooo/ComfyUI-H3-PowerLoraStack"
 )
 
 DIFFUSION_MODELS=(
@@ -79,7 +82,7 @@ LATENT_UPSCALE_MODELS=(
 )
 
 VAE_MODELS=(
-    "https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/vae/minimax_h3_video_vae_int8_convrot.safetensors"
+    #"https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/vae/minimax_h3_video_vae_int8_convrot.safetensors"
     "https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/vae/minimax_h3_audio_vae_fp32.safetensors"
     "https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/vae/minimax_h3_video_vae_fp16.safetensors"
 )
