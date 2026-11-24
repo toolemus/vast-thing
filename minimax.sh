@@ -43,21 +43,19 @@ NODES=(
     "https://github.com/xmarre/ComfyUI-Spectrum-MiniMax-H3"
 )
 
-CHECKPOINT_MODELS=(
-)
-
 DIFFUSION_MODELS=(
     "https://huggingface.co/TenStrip/10Eros-Max/resolve/main/10Eros_Max_h3_TURBO-hybrid_beta5_int8.safetensors"
-    #"https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/diffusion_models/minimax_h3_fl2va_int8_convrot.safetensors"
     #"https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/diffusion_models/minimax_h3_ref2va_int8_convrot.safetensors"
 )
 
-CLIP_MODELS=(
+VAE_APPROX=(
+    "https://huggingface.co/t8star/Taeh3-Comfy/resolve/main/models/vae_approx/taeh3_2d_kijai.safetensors"
 )
 
 TEXT_ENCODERS=(
+    "https://huggingface.co/LokkenJP/TenEros_Max_optimized_learned/resolve/main/text_encoder/qwen3vl_32b_minimax_h3_native_w4g128_w6protected_15.35gb.safetensors"
     "https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/text_encoders/qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors"
-    )
+)
 
 LORA_MODELS=(
     #"https://huggingface.co/Kutches/minmax/resolve/main/minimax_h3_fl2v_turbo_8step_v1.0_comfyui_bf16.safetensors"
@@ -71,11 +69,17 @@ LORA_MODELS=(
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/Minimax%20H3/MM-H3%20-%20Blowjob%20v3.safetensors"
     "https://huggingface.co/GoSilla/DR34ML4Y_H3/resolve/main/H3_DR34ML4Y_P1.safetensors"
     "https://huggingface.co/penumbralt/test-debug/resolve/main/testdebug.safetensors"
-    "https://huggingface.co/wingbrother/MySelectedDiffusions/resolve/main/lora/minimaxh3/NSFW_3d_animation_helper.safetensors"
+    "https://huggingface.co/zhuzhipeng2025/h3Huang/resolve/main/2925727/3478361/M3_Unlocked_V3.1_B.safetensors"
     "https://huggingface.co/JackyCoo/I2V_good_models_to_use/resolve/main/Minimax%20H3/H3_VBVR_Pro-V2.safetensors"
+    "https://huggingface.co/cdkkkk/setup/resolve/main/h3/HMCumshot_V2.safetensors"
+)
+
+LATENT_UPSCALE_MODELS=(
+    "https://huggingface.co/LBH-123-AI/Minimax_h3_latent_Upscaler/resolve/main/minimax_h3_latent_upscaler_2d_conv_v1/minimax_h3_latent_upscaler_2d_conv_v1_fp16.safetensors"
 )
 
 VAE_MODELS=(
+    "https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/vae/minimax_h3_video_vae_int8_convrot.safetensors"
     "https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/vae/minimax_h3_audio_vae_fp32.safetensors"
     "https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/vae/minimax_h3_video_vae_fp16.safetensors"
 )
@@ -95,9 +99,6 @@ function provisioning_start() {
     provisioning_get_nodes
     provisioning_get_pip_packages
     provisioning_get_files \
-        "${COMFYUI_DIR}/models/checkpoints" \
-        "${CHECKPOINT_MODELS[@]}"
-    provisioning_get_files \
         "${COMFYUI_DIR}/models/diffusion_models" \
         "${DIFFUSION_MODELS[@]}"
     provisioning_get_files \
@@ -107,14 +108,17 @@ function provisioning_start() {
         "${COMFYUI_DIR}/models/loras" \
         "${LORA_MODELS[@]}"
     provisioning_get_files \
-        "${COMFYUI_DIR}/models/clip_vision" \
-        "${CLIP_MODELS[@]}"
+        "${COMFYUI_DIR}/models/vae_approx" \
+        "${VAE_APPROX[@]}"
     provisioning_get_files \
         "${COMFYUI_DIR}/models/vae" \
         "${VAE_MODELS[@]}"
     provisioning_get_files \
         "${COMFYUI_DIR}/models/upscale_models" \
         "${ESRGAN_MODELS[@]}"
+    provisioning_get_files \
+        "${COMFYUI_DIR}/models/latent_upscale_models" \
+        "${LATENT_UPSCALE_MODELS[@]}"
     provisioning_print_end
 }
 
